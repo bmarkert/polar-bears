@@ -1,0 +1,72 @@
+---
+title: "Polar Bear (Ursus maritimus) Maternal Den Locations in the Beaufort and Chukchi Seas and Nearby Areas, 1910-2018"
+subtitle: An R Notebook by Brandi E. Markert
+output:
+  html_document:
+    df_print: paged
+  pdf_document: default
+---
+
+```{r global_options, include=FALSE}
+knitr::opts_chunk$set(fig.width=8, fig.height=4, echo = FALSE, warning = FALSE, message = FALSE)
+```
+
+Examining polar bear den locations. Using data downloaded from [United States Geological Survey](https://alaska.usgs.gov/products/data.php?dataid=269).
+
+Data source: Durner, G. M., 2010, Catalogue of Polar Bear (Ursus maritimus) maternal den locations in the Beaufort and Chukchi seas and nearby areas, 1910-2018 (ver. 2.0, January 2020): U.S. Geological Survey data release, [https://doi.org/10.5066/P9RPHH50](https://doi.org/10.5066/P9RPHH50).
+
+```{r}
+# Opening package libraries
+library(tidyverse)
+library(lubridate)
+library(dplyr)
+library(plotly)
+library(maps)
+library(ggmap)
+library(ggplot2)
+
+# Importing data
+bears <- read.csv(file="C:\\Users\\brand\\OneDrive\\Documents\\R\\polar-bears\\USGS_polar_bear_maternal_dens_1910-2018.csv", header=TRUE, stringsAsFactors = FALSE)
+
+```
+
+```{r}
+# Dens reported over time, by discovery method
+
+a <- ggplot(bears, aes(x=Spring_year, fill=Discovery_method))
+a + geom_histogram(binwidth = 1) + labs(x = "Year", y = "Dens Reported",
+title ="Polar bear dens reported, by year and discovery method") + scale_x_continuous(limits = c(1910, 2018))
+```
+
+```{r}
+# Dens reported over time, by data source
+
+a <- ggplot(bears, aes(x=Spring_year, fill=Data_source))
+a + geom_histogram(binwidth = 1) + labs(x = "Year", y = "Dens Reported",
+title ="Polar bear dens reported, by year and data source") + scale_x_continuous(limits = c(1910, 2018))
+```
+
+```{r}
+# Mapping reported polar bear den locations
+states_map <- map_data("world")
+states_map %>% 
+    filter(region %in% c("USA")) %>%
+    ggplot() +
+        geom_polygon(aes(x = long, y = lat, group = group)) +
+        coord_quickmap() +
+           coord_cartesian(xlim=c(-200, 200), ylim = c(55, 85)) +
+              geom_point(data=bears, aes(x = Longitude, y = Latitude, color=Spring_year)) +
+                    labs(x="", y="", title = "Map of reported polar bear den locations, by year") +
+                       scale_color_gradient(low="green", high="red")
+states_map %>% 
+    filter(region %in% c("USA")) %>%
+    ggplot() +
+        geom_polygon(aes(x = long, y = lat, group = group)) +
+        coord_quickmap() +
+           coord_cartesian(xlim=c(-200, 200), ylim = c(55, 85)) +
+              geom_point(data=bears, aes(x = Longitude, y = Latitude, color=Discovery_method)) +
+                    labs(x="", y="", title = "Map of reported polar bear den locations, by discovery method") +
+                        scale_color_brewer(palette="Dark2")
+```
+
+

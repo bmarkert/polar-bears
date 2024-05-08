@@ -1,0 +1,38 @@
+Current Citation:
+
+Durner, G. M., 2010, Catalogue of Polar Bear (Ursus maritimus) maternal den locations in the Beaufort and Chukchi seas and nearby areas, 1910-2018 (ver. 2.0, January, 2020): U.S. Geological Survey data release, https://doi.org/10.5066/P9RPHH50.
+
+Version 1.0, 2010
+Original citation:
+Durner, G.M., Fischbach, A.S., Amstrup, S.C., and Douglas, D.C., 2010, Catalogue of polar bear (Ursus maritimus) maternal den locations in the Beaufort Sea and neighboring regions, Alaska, 1910-2010: U.S. Geological Survey Data Series 568, 14 p. https://doi.org/10.3133/ds568
+
+Version 1.0 is an initial release of 392 polar bear maternal den records from years 1910 to 2010.
+------------
+
+Version 2.0, 2020
+
+Version 2.0 includes additional den records for a total of 530 maternal den records from years 1910 to 2018.
+
+Title has been changed to “Catalogue of Polar Bear (Ursus maritimus) Maternal Den Locations in the Beaufort and Chukchi Seas and Nearby Areas, 1910–2018”
+
+Field “Confirmation” has been added to version 2.0.  “Confirmation” is an indicator of confidence that the observation was truly a polar bear maternal den, where Confirmation = “C” indicates dens verified by on-site visits, and Confirmation = “P” indicates records with supporting information to indicate maternal denning (e.g., temperature, activity and signal quality of satellite telemetry data), but lacked a site visit or a subsequent observation of the adult with young.
+
+Field “Substrate” has been added to version 2.0.  “Substrate” indicates the surface on which the den occurred, where “L” = land, “”” = land fast sea ice, “P” = floating and mobile pack ice, and “U” = unknown.
+
+Field “Position_method” has been added to version 2.0.  “Position_method” is the tool or process used to determine the coordinates of the den, where “map” = coordinates determined by a USGS topographic or similar map, “aircraft” = coordinates determined by onboard aircraft navigation systems, “Argos LC” = coordinates determined by Argos-equipped satellite radio tags deployed on the polar bear and arranged from higher to lesser certainty (i.e., LC=3, 2, 1, 0, A, B, or Z), and “gps” = coordinates determined by field or radio-tag gps receivers.
+
+Field “Horizontal_error_m” has been added to version 2.0.  “Horizontal_error_m” is an estimate of coordinate uncertainty, ranging from 7600 m (Argos LC=Z) to 30 m (gps).
+
+DenID = 547 has been removed from version 2.0.
+DenID = 625 has been removed from version 2.0.
+DenID = 723 has been removed from version 2.0.
+DenID = 855 has been removed from version 2.0.
+DenID = 969 has been removed from version 2.0.
+DenID = 973 has been removed from version 2.0.
+DenID = 989 has been removed from version 2.0.
+
+Substrate = P (pack ice dens) coordinates in version 2.0 may differ from the coordinates for the identical DenID in version 1.0 due to manual reevaluation of location and sensor data from Argos-discovered dens.
+
+Substrate = L (land dens) or F (land fast ice dens) coordinates in version 2.0 may differ from the coordinates for the identical DenID in version 1.0 due to manual reevaluation of location and sensor data from Argos-discovered dens and averaging of coordinates throughout the period of den tenure.
+-----------
+
